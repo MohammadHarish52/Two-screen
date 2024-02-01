@@ -16,29 +16,32 @@ const ShowList = () => {
     <div>
       <h1>Show List</h1>
       <div className="movies">
-        {shows.map((show) => (
-          <ul key={show.id}>
-            <li key={show.id}>{show.show.name}</li>
-            <li>Language: {show.show.language}</li>
-            <li>Premiered: {show.show.premiered}</li>
-            <li>Rating: {show.show.rating?.average}</li>
-            {show.show.image && (
-              <img
-                src={`${
-                  show.show.image.medium
-                    ? show.show.image.medium
-                    : show.show.image.original
-                }`}
-                alt="movie image"
-              />
-            )}
-            <li>
-              <Link to={`/show/${show.show.id}`}>
-                <button>View Summary</button>
-              </Link>
-            </li>
-          </ul>
-        ))}
+        {shows.map(
+          (show) =>
+            show.show.image && (
+              <ul key={show.show.id}>
+                <li>{show.show.name}</li>
+                <li>Language: {show.show.language}</li>
+                <li>Premiered: {show.show.premiered}</li>
+                <li>Rating: {show.show.rating?.average}</li>
+                {show.show.image && (
+                  <img
+                    src={`${
+                      show.show.image.medium
+                        ? show.show.image.medium
+                        : show.show.image.original
+                    }`}
+                    alt="movie image"
+                  />
+                )}
+                <li>
+                  <Link to={`/show/${show.show.id}`}>
+                    <button>View Summary</button>
+                  </Link>
+                </li>
+              </ul>
+            )
+        )}
       </div>
     </div>
   );
