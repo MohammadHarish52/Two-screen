@@ -1,0 +1,59 @@
+/* Global styles for better responsiveness */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4; /* Set a background color */
+}
+
+/* ShowList component styles */
+div {
+  max-width: 100vw;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff; /* Set a background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+.movies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+ul {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  padding: 20px;
+  margin: 20px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff; /* Set a background color */
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  color: #333; /* Text color */
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin-top: 10px;
+  border-radius: 5px; /* Add rounded corners to images */
+}
