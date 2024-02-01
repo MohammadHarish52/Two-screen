@@ -7,7 +7,6 @@ body {
   background-color: #1b515e;
 }
 
-/* ShowList component styles */
 div {
   max-width: 100vw;
   background-color: #1b515e; /* Set a background color */
@@ -58,9 +57,11 @@ img {
   margin-top: 10px;
   border-radius: 5px; /* Add rounded corners to images */
 }
+.wrapper {
+  margin: auto;
+}
 .show-details {
   display: flex;
-
   flex-direction: column;
   width: 100vw;
   height: 100vh;
@@ -80,10 +81,14 @@ img {
   width: auto;
 }
 .link {
-  color: #1b515e;
+  color: #3b656f;
   text-decoration: none;
   font-weight: 600;
 }
+.link:hover {
+  color: #fff;
+}
+
 .summary_btn:hover {
   color: #69aab3;
   background-color: #88b990;
@@ -118,23 +123,27 @@ button {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #69aab3;
-  color: #ffffff;
+  background-color: #338275;
+  color: #1b515e;
 }
 
 .booking-form h1 {
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .booking-form form {
+  background-color: #acddb4;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 70%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .booking-form p {
-  font-size: 18px;
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
@@ -145,6 +154,8 @@ button {
 }
 
 .booking-form input {
+  border: none;
+  border-radius: 4px;
   padding: 10px;
   margin-top: 5px;
 }
@@ -160,4 +171,56 @@ button {
 
 .booking-form button:hover {
   background-color: #88b990;
+  color: #1b515e;
+}
+.confirmation-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: auto;
+  background-color: #1b515e;
+  color: #333;
+}
+
+.confirmation-details {
+  text-align: left;
+  padding: 20px;
+  background-color: #88b990;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-details h1 {
+  color: #1b515e;
+  margin-bottom: 20px;
+}
+
+.confirmation-details h2 {
+  color: #333;
+}
+
+.confirmation-details img {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.confirmation-details p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.home_btn {
+}
+.home_btn:hover {
+  background-color: #0c262c;
+  color: #fff;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .confirmation-details {
+    width: 80%;
+  }
 }

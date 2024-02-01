@@ -55,7 +55,7 @@ const BookingForm = () => {
     console.log("Booking submitted:", formData);
 
     // For this example, navigate back to the show details page
-    history.push(`/show/${id}`);
+    history(`/confirmation/${id}`);
   };
 
   return (
@@ -63,7 +63,7 @@ const BookingForm = () => {
       <h1>Booking Form</h1>
       {show && (
         <form onSubmit={handleSubmit}>
-          <p>Movie: {show.name}</p>
+          <p>Movie : {show.name}</p>
           <label>
             Name:
             <input
@@ -94,7 +94,9 @@ const BookingForm = () => {
               required
             />
           </label>
-          <button type="submit">Submit Booking</button>
+          <button onClick={handleSubmit} type="submit">
+            Submit Booking
+          </button>
         </form>
       )}
     </div>
