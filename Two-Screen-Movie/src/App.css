@@ -78,6 +78,9 @@ img {
   background-color: #338275;
   font-size: 24px;
 }
+.para {
+  padding: 24px;
+}
 .summary_btn {
   width: auto;
 }

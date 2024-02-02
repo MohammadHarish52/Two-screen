@@ -36,7 +36,10 @@ const ShowDetails = () => {
         {show ? (
           <div className="summary">
             <h2>{show.name}</h2>
-            {show.summary}
+            <div
+              dangerouslySetInnerHTML={{ __html: show.summary }}
+              className="para"
+            />
             <button onClick={handleBookTicket} className="summary_btn">
               <Link className="link" to={`/book/${show.id}`}>
                 Book Ticket
