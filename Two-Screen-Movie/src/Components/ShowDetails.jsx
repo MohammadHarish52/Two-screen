@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 const ShowDetails = () => {
   const { id } = useParams();
   const [show, setShow] = useState(null);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch details for the specific show using the show ID from the URL parameter
@@ -26,7 +26,7 @@ const ShowDetails = () => {
 
   const handleBookTicket = () => {
     //Navigate to the Booking form
-    history(`/book/${id}`);
+    navigate(`/book/${id}`);
   };
 
   return (

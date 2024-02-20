@@ -1,23 +1,29 @@
 /* Global styles for better responsiveness */
+:root {
+  --darkest-color: #3c3633;
+  --darker-color: #747264;
+  --lighter-color: #ffffec;
+  --lightest-color: #eeedeb;
+}
 
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #1b515e;
+  background-color: var(--darkest-color);
 }
 
 div {
   max-width: 100vw;
-  background-color: #1b515e; /* Set a background color */
+  background-color: var(--darkest-color); /* Set a background color */
   /* Add a subtle box shadow for depth */
 }
 .movies {
   display: flex;
-  background-color: #88b990;
+  background-color: var(--darker-color);
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: flex-start;
 }
@@ -37,13 +43,13 @@ ul {
   border: none;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #338275; /* Set a background color */
+  background-color: var(--lighter-color); /* Set a background color */
 }
 
 li {
-  color: #fff;
+  color: var(--darkest-color);
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--darkest-color);
 }
 
 li:last-child {
@@ -66,7 +72,7 @@ img {
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  background-color: #1b515e;
+  background-color: var(--darkest-color);
   color: white;
 }
 .summary {
@@ -75,7 +81,7 @@ img {
   display: flex;
   flex-direction: column;
   height: auto;
-  background-color: #338275;
+  background-color: var(--lightest-color);
   font-size: 24px;
 }
 .para {
@@ -85,7 +91,7 @@ img {
   width: auto;
 }
 .link {
-  color: #3b656f;
+  color: var(--darkest-color);
   text-decoration: none;
   font-weight: 600;
 }
@@ -95,28 +101,28 @@ img {
 
 .summary_btn:hover {
   color: #69aab3;
-  background-color: #88b990;
+  background-color: var(--darker-color);
 }
 button {
   padding: 10px;
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  background-color: #acddb4;
+  background-color: var(--darker-color);
   font-weight: 600;
-  color: #1b515e;
+  color: var(--lighter-color);
   margin: 10px 0;
 }
 .summary_btn {
   margin-top: 20px;
   width: auto;
-  color: #1b515e;
+  color: var(--darkest-color);
   text-decoration: none;
 }
 @media screen and (max-width: 768px) {
   .summary_btn {
     width: 30%;
-    color: #1b515e;
+    color: var(--darkest-color);
     text-decoration: none;
   }
 }
@@ -127,17 +133,19 @@ button {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #338275;
-  color: #1b515e;
+  background-color: var(--lightest-color);
+  color: var(--darkest-color);
 }
 
 .booking-form h1 {
   margin-bottom: 20px;
+  color: var(--darkest-color);
   text-align: left;
 }
 
 .booking-form form {
-  background-color: #acddb4;
+  background-color: var(--darkest-color);
+  color: var(--lightest-color);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -166,7 +174,7 @@ button {
 
 .booking-form button {
   padding: 10px;
-  background-color: #1b515e;
+  background-color: var(--darker-color);
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -174,8 +182,8 @@ button {
 }
 
 .booking-form button:hover {
-  background-color: #88b990;
-  color: #1b515e;
+  background-color: var(--darker-color);
+  color: var(--darkest-color);
 }
 .confirmation-page {
   display: flex;
@@ -184,25 +192,25 @@ button {
   justify-content: center;
   height: 80vh;
   width: auto;
-  background-color: #1b515e;
-  color: #333;
+  background-color: var(--darkest-color);
+  color: var(--lightest-color);
 }
 
 .confirmation-details {
   text-align: left;
   padding: 20px;
-  background-color: #88b990;
+  background-color: var(--darker-color);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .confirmation-details h1 {
-  color: #1b515e;
+  color: var(--lightest-color);
   margin-bottom: 20px;
 }
 
 .confirmation-details h2 {
-  color: #333;
+  color: var(--lightest-color);
 }
 
 .confirmation-details img {
@@ -215,11 +223,10 @@ button {
   font-size: 18px;
   margin-top: 10px;
 }
-.home_btn {
-}
+
 .home_btn:hover {
-  background-color: #0c262c;
-  color: #fff;
+  background-color: var(--lightest-color);
+  color: var(--darkest-color);
 }
 
 /* Optional: Add media queries for responsiveness */

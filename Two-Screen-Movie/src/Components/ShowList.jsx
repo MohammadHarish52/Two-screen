@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 const ShowList = () => {
   const [shows, setShows] = useState([]);
@@ -19,27 +21,31 @@ const ShowList = () => {
         {shows.map(
           (show) =>
             show.show.image && (
-              <ul key={show.show.id}>
-                <li>{show.show.name}</li>
-                <li>Language: {show.show.language}</li>
-                <li>Premiered: {show.show.premiered}</li>
-                <li>Rating: {show.show.rating?.average}</li>
-                {show.show.image && (
-                  <img
-                    src={`${
-                      show.show.image.medium
-                        ? show.show.image.medium
-                        : show.show.image.original
-                    }`}
-                    alt="movie image"
-                  />
-                )}
-                <li>
-                  <Link to={`/show/${show.show.id}`}>
-                    <button>View Summary</button>
-                  </Link>
-                </li>
-              </ul>
+              <Card key={show.show.id} style={{ margin: 20 }}>
+                <CardContent>
+                  <ul key={show.show.id}>
+                    <li>{show.show.name}</li>
+                    <li>Language: {show.show.language}</li>
+                    <li>Premiered: {show.show.premiered}</li>
+                    <li>Rating: {show.show.rating?.average}</li>
+                    {show.show.image && (
+                      <img
+                        src={`${
+                          show.show.image.medium
+                            ? show.show.image.medium
+                            : show.show.image.original
+                        }`}
+                        alt="movie image"
+                      />
+                    )}
+                    <li>
+                      <Link to={`/show/${show.show.id}`}>
+                        <button>View Summary</button>
+                      </Link>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
             )
         )}
       </div>
