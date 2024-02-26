@@ -81,7 +81,7 @@ img {
   display: flex;
   flex-direction: column;
   height: auto;
-  background-color: var(--lightest-color);
+  background-color: var(--darker-color);
   font-size: 24px;
 }
 .para {
@@ -92,6 +92,7 @@ img {
 }
 .link {
   color: var(--darkest-color);
+  text-align: left;
   text-decoration: none;
   font-weight: 600;
 }
@@ -100,7 +101,7 @@ img {
 }
 
 .summary_btn:hover {
-  color: #69aab3;
+  color: var(--lighter-color);
   background-color: var(--darker-color);
 }
 button {
