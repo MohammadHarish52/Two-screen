@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Layout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="bg-black text-white p-4">
+      <nav className="bg-gray-800 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="text-xl font-bold">
             Movie Booking
