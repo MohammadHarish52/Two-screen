@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_KEY = "40f253a5e9b9b0056ddd5453da2887c7";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const BookingForm = () => {
   const { id } = useParams();
@@ -60,7 +60,7 @@ const BookingForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-gray-800 rounded-lg shadow-xl text-white">
+    <div className="max-w-md mx-auto mt-10 p-6 bg-black rounded-lg shadow-xl text-white border-gray-700 border-2">
       <h1 className="text-2xl font-bold mb-6">Booking Form</h1>
       {movie && (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -74,7 +74,7 @@ const BookingForm = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-white focus:ring-white"
+                className="mt-1 block w-full rounded-md border border-gray-600 bg-black text-white shadow-sm focus:border-white focus:ring-white p-2"
               />
             </label>
           </div>
@@ -87,7 +87,7 @@ const BookingForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-white focus:ring-white"
+                className="mt-1 block w-full rounded-md border border-gray-600 bg-black text-white shadow-sm focus:border-white focus:ring-white p-2"
               />
             </label>
           </div>
@@ -100,7 +100,7 @@ const BookingForm = () => {
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
                 required
-                className="mt-1 block w-full rounded-md border-gray-600 bg-gray-700 text-white shadow-sm focus:border-white focus:ring-white"
+                className="mt-1 block w-full rounded-md border border-gray-600 bg-black text-white shadow-sm focus:border-white focus:ring-white p-2"
               />
             </label>
           </div>

@@ -25,7 +25,7 @@ const ConfirmationPage = () => {
   }, [id]);
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-gray-800 rounded-lg shadow-xl text-white">
+    <div className="max-w-md mx-auto mt-10 p-6 text-white border-gray-700 border-2 rounded-lg shadow-xl ">
       <h1 className="text-2xl font-bold mb-6">Booking Confirmation</h1>
       {movie ? (
         <div className="space-y-4">

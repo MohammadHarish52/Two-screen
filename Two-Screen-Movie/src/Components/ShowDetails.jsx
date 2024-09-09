@@ -27,7 +27,7 @@ const ShowDetails = () => {
   if (!movie) return <p className="text-center mt-8 text-white">Loading...</p>;
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 bg-gray-800 rounded-lg shadow-xl text-white">
+    <div className="max-w-4xl mx-auto mt-10 p-6 bg-black border-2 border-gray-700 rounded-lg shadow-xl text-white">
       <h1 className="text-3xl font-bold mb-6">{movie.title}</h1>
       <div className="flex flex-col md:flex-row">
         <img
