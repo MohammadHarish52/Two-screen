@@ -1,22 +1,22 @@
-// components/ConfirmationPage.jsx
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+const API_KEY = "40f253a5e9b9b0056ddd5453da2887c7";
+
 const ConfirmationPage = () => {
   const { id } = useParams();
-  const [show, setShow] = useState(null);
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    // Fetch details for the specific show using the show ID from the URL parameter
-    fetch(`https://api.tvmaze.com/shows/${id}`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
       .then((res) => {
         if (!res.ok) {
-          throw new Error(`Failed to fetch show details: ${res.status}`);
+          throw new Error(`Failed to fetch movie details: ${res.status}`);
         }
         return res.json();
       })
       .then((data) => {
-        setShow(data);
+        setMovie(data);
       })
       .catch((error) => {
         console.error(error);
@@ -25,30 +25,37 @@ const ConfirmationPage = () => {
   }, [id]);
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">
-        Booking Confirmation
-      </h1>
-      {show ? (
+    <div className="max-w-md mx-auto mt-10 p-6 bg-gray-800 rounded-lg shadow-xl text-white">
+      <h1 className="text-2xl font-bold mb-6">Booking Confirmation</h1>
+      {movie ? (
         <div className="space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">{show.name}</h2>
+          <h2 className="text-xl font-semibold">{movie.title}</h2>
           <img
-            src={show.image?.medium || show.image?.original}
-            alt={`${show.name} Poster`}
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={`${movie.title} Poster`}
             className="w-full rounded-lg shadow-md"
           />
-          <p className="text-gray-600">
-            Your booking for {show.name} has been confirmed. Enjoy the show!
+          <p>
+            Your booking for {movie.title} has been confirmed. Enjoy the movie!
+          </p>
+          <p className="text-sm text-gray-300">
+            Release Date: {movie.release_date}
+          </p>
+          <p className="text-sm text-gray-300">
+            Runtime: {movie.runtime} minutes
+          </p>
+          <p className="text-sm text-gray-300">
+            Rating: {movie.vote_average.toFixed(1)}/10
           </p>
           <Link
             to="/"
-            className="block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black text-center"
+            className="block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-black bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white text-center"
           >
-            Move to Homepage
+            Return to Homepage
           </Link>
         </div>
       ) : (
-        <p className="text-gray-600">Loading...</p>
+        <p>Loading...</p>
       )}
     </div>
   );
