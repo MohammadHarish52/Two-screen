@@ -26,11 +26,12 @@ const BookingForm = () => {
       })
       .catch((error) => {
         console.error(error);
-        // Handle the error
+        // Handle the error (e.g., display an error message)
       });
   }, [id]);
 
   useEffect(() => {
+    // Load default form data from local storage if available
     const storedFormData = JSON.parse(localStorage.getItem("bookingFormData"));
     if (storedFormData) {
       setFormData(storedFormData);
@@ -47,8 +48,14 @@ const BookingForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Save form data to local storage
     localStorage.setItem("bookingFormData", JSON.stringify(formData));
+
+    // Add your logic to proceed with the booking (can navigate to a confirmation page, etc.)
     console.log("Booking submitted:", formData);
+
+    // Navigate to the confirmation page
     navigate(`/confirmation/${id}`);
   };
 
