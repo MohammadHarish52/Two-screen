@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const API_KEY = "40f253a5e9b9b0056ddd5453da2887c7";
 
 const BookingForm = () => {
   const { id } = useParams();
