@@ -1,9 +1,9 @@
-/* Global styles for better responsiveness */
+/* Global styles */
 :root {
-  --darkest-color: #3c3633;
-  --darker-color: #747264;
-  --lighter-color: #ffffec;
-  --lightest-color: #eeedeb;
+  --darkest-color: #1a1a1a;
+  --darker-color: #333333;
+  --lighter-color: #f5f5f5;
+  --lightest-color: #ffffff;
 }
 
 body {
@@ -11,228 +11,50 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: var(--darkest-color);
+  background-color: var(--lighter-color);
+  color: var(--darkest-color);
 }
 
-div {
-  max-width: 100vw;
-  background-color: var(--darkest-color); /* Set a background color */
-  /* Add a subtle box shadow for depth */
-}
+/* Custom styles that might be hard to achieve with Tailwind alone */
 .movies {
   display: flex;
-  background-color: var(--darker-color);
-  flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
-  align-items: flex-start;
+  justify-content: space-around;
 }
 
-h1 {
-  text-align: center;
-  font-size: 36px;
-  color: #fff;
-  margin-top: none;
-}
-
-ul {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  list-style-type: none;
-  padding: 20px;
-  margin: 20px 20px;
-  border: none;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: var(--lighter-color); /* Set a background color */
-}
-
-li {
-  color: var(--darkest-color);
-  padding: 10px;
-  border-bottom: 1px solid var(--darkest-color);
-}
-
-li:last-child {
-  border-bottom: none;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  margin-top: 10px;
-  border-radius: 5px; /* Add rounded corners to images */
-}
-.wrapper {
-  margin: auto;
-}
 .show-details {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--darkest-color);
-  color: white;
+  min-height: 100vh;
 }
+
 .summary {
-  padding: 20px;
-  width: auto;
-  display: flex;
-  flex-direction: column;
+  background-color: var(--lighter-color);
+}
+
+/* Responsive image */
+img {
+  max-width: 100%;
   height: auto;
-  background-color: var(--darker-color);
-  font-size: 24px;
-}
-.para {
-  padding: 24px;
-}
-.summary_btn {
-  width: auto;
-}
-.link {
-  color: var(--darkest-color);
-  text-align: left;
-  text-decoration: none;
-  font-weight: 600;
-}
-.link:hover {
-  color: #fff;
+  display: block;
 }
 
-.summary_btn:hover {
-  color: var(--lighter-color);
-  background-color: var(--darker-color);
-}
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: var(--darker-color);
-  font-weight: 600;
-  color: var(--lighter-color);
-  margin: 10px 0;
-}
-.summary_btn {
-  margin-top: 20px;
-  width: auto;
-  color: var(--darkest-color);
-  text-decoration: none;
-}
-@media screen and (max-width: 768px) {
-  .summary_btn {
-    width: 30%;
-    color: var(--darkest-color);
-    text-decoration: none;
-  }
-}
-
-.booking-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--lightest-color);
-  color: var(--darkest-color);
-}
-
-.booking-form h1 {
-  margin-bottom: 20px;
-  color: var(--darkest-color);
-  text-align: left;
-}
-
-.booking-form form {
+/* Custom button styles if not using Tailwind's btn class */
+.custom-btn {
+  padding: 0.5rem 1rem;
   background-color: var(--darkest-color);
   color: var(--lightest-color);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 70%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.booking-form p {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.booking-form label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.booking-form input {
   border: none;
-  border-radius: 4px;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-.booking-form button {
-  padding: 10px;
-  background-color: var(--darker-color);
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.booking-form button:hover {
+.custom-btn:hover {
   background-color: var(--darker-color);
-  color: var(--darkest-color);
-}
-.confirmation-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  width: auto;
-  background-color: var(--darkest-color);
-  color: var(--lightest-color);
 }
 
-.confirmation-details {
-  text-align: left;
-  padding: 20px;
-  background-color: var(--darker-color);
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.confirmation-details h1 {
-  color: var(--lightest-color);
-  margin-bottom: 20px;
-}
-
-.confirmation-details h2 {
-  color: var(--lightest-color);
-}
-
-.confirmation-details img {
-  max-width: 50%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.confirmation-details p {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.home_btn:hover {
-  background-color: var(--lightest-color);
-  color: var(--darkest-color);
-}
-
-/* Optional: Add media queries for responsiveness */
+/* Media query for responsiveness */
 @media screen and (max-width: 768px) {
-  .confirmation-details {
-    width: 80%;
+  .movies {
+    flex-direction: column;
   }
 }

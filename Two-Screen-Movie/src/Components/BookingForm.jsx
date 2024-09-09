@@ -59,42 +59,56 @@ const BookingForm = () => {
   };
 
   return (
-    <div className="booking-form">
-      <h1>Booking Form</h1>
+    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
+      <h1 className="text-2xl font-bold mb-6 text-gray-800">Booking Form</h1>
       {show && (
-        <form onSubmit={handleSubmit}>
-          <p>Movie : {show.name}</p>
-          <label>
-            Name:
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <label>
-            Phone Number:
-            <input
-              type="tel"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-          <button onClick={handleSubmit} type="submit">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <p className="text-lg font-semibold text-gray-700">
+            Movie: {show.name}
+          </p>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Name:
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black"
+              />
+            </label>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Email:
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black"
+              />
+            </label>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Phone Number:
+              <input
+                type="tel"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleInputChange}
+                required
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-black focus:ring-black"
+              />
+            </label>
+          </div>
+          <button
+            type="submit"
+            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+          >
             Submit Booking
           </button>
         </form>
