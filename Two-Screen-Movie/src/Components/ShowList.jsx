@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 
 const API_KEY = "40f253a5e9b9b0056ddd5453da2887c7";
 
@@ -23,24 +21,30 @@ const ShowList = () => {
         {movies.map((movie) => (
           <div
             key={movie.id}
-            className="bg-black border-[1px] border-gray-700 rounded-lg shadow-md overflow-hidden"
+            className="bg-black rounded-lg shadow-md overflow-hidden flex flex-col"
           >
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt={`${movie.title} poster`}
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{movie.title}</h2>
-              <p className="text-sm text-gray-300 mb-1">
-                Release Date: {movie.release_date}
-              </p>
-              <p className="text-sm text-gray-300 mb-4">
-                Rating: {movie.vote_average}/10
-              </p>
+            <div className="relative pt-[150%]">
+              {" "}
+              {/* 2:3 aspect ratio */}
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={`${movie.title} poster`}
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 flex-grow flex flex-col justify-between">
+              <div>
+                <h2 className="text-xl font-semibold mb-2">{movie.title}</h2>
+                <p className="text-sm text-gray-300 mb-1">
+                  Release Date: {movie.release_date}
+                </p>
+                <p className="text-sm text-gray-300 mb-4">
+                  Rating: {movie.vote_average}/10
+                </p>
+              </div>
               <Link
                 to={`/show/${movie.id}`}
-                className="block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white hover:text-black bg-gray-800 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white text-center"
+                className="block w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-black bg-white hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white text-center mt-auto"
               >
                 View Details
               </Link>
