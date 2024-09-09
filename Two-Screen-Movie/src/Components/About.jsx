@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 bg-gray-800 rounded-lg shadow-xl text-white">
+    <div className="max-w-4xl mx-auto mt-10 p-6  border-gray-700 border-2 rounded-lg shadow-xl text-white">
       <h1 className="text-3xl font-bold mb-6">About Movie Booking</h1>
       <p className="mb-4">
         Welcome to Movie Booking, your premier destination for booking tickets
