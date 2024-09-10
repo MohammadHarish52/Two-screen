@@ -23,7 +23,7 @@ const ConfirmationPage = () => {
       <div className="space-y-4">
         <h2 className="text-xl font-semibold">{movie.title}</h2>
         <img
-          src={`../public${movie.backdrop_path}`}
+          src={`${movie.backdrop_path}`}
           alt={`${movie.title} Poster`}
           className="w-full rounded-lg shadow-md"
         />

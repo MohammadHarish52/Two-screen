@@ -23,7 +23,7 @@ const ShowDetails = () => {
       <h1 className="text-3xl font-bold mb-6">{movie.title}</h1>
       <div className="flex flex-col md:flex-row">
         <img
-          src={`../public${movie.poster_path}`}
+          src={`${movie.poster_path}`}
           alt={`${movie.title} poster`}
           className="w-full md:w-1/3 rounded-lg shadow-md mb-6 md:mb-0 md:mr-6"
         />
