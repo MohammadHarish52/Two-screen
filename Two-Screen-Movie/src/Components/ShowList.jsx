@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
-const API_KEY = "40f253a5e9b9b0056ddd5453da2887c7";
+import movieData from "../movieData.json";
 
 const ShowList = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setMovies(data.results);
-      });
+    setMovies(movieData);
   }, []);
 
   return (
@@ -24,10 +19,8 @@ const ShowList = () => {
             className="bg-black rounded-lg shadow-md overflow-hidden flex flex-col"
           >
             <div className="relative pt-[150%]">
-              {" "}
-              {/* 2:3 aspect ratio */}
               <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                src={`../public${movie.backdrop_path}`}
                 alt={`${movie.title} poster`}
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
