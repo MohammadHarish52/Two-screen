@@ -20,7 +20,7 @@ const ShowList = () => {
           >
             <div className="relative pt-[150%]">
               <img
-                src={`../public${movie.backdrop_path}`}
+                src={`${movie.backdrop_path}`}
                 alt={`${movie.title} poster`}
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
